@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box; /* Diz para o navegador considerar a borda na definição da largura e altura dos objetos*/
+
+} /* * >> Significa que é válido para a página inteira*/
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #06283D; /* definido a cor de fundo da página*/
+}
+
+
+/* LEMBRE-SE: quando começa com . significa que é uma classe a parte criada por você!
+ * CASO: caso começe com # ele irá adicionar o estilo a partir da id que você colocou no objeto!*/
+.container{
+    position: relative;
+    width: 400px;
+    height: 105px; /* Altura original: 105 */
+    background: white;
+    padding: 28px 32px;
+    overflow: hidden; /* caso haja mais informações sobrepostas ficará escondida */
+    border-radius: 18px;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.6s ease-out; /* tempo da animação + tipo */
+} 
+
+
+.search-box {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space space-between;
+}
+
+.search-box input{
+    color: #06283D;
+    width: 80%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 32px;
+}
+
+/* Lembre-se que dois :: significa que é um pseudo elemento, caso seja somente um : significa que é uma pseudo classe*/
+/* Placeholder significa um lugar de um determinado componente que será reservado para uma dica
+ * Esse atributo cumpre a função de disponibilizar ao usuário uma dica que descreve o valor esperado em um determinado campo de entrada.*/
+.search-box input::placeholder {
+    font-size: 20px;
+    font-weight: 500;
+    color: #06283D;
+    text-transform:  capitalize;
+}
+
+.search-box button {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: #06283D;
+    background: #DFF6FF;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.4s ease;
+}
+
+
+.search-box button:hover {
+    color: white;
+    background: #06283D;
+}
+
+
+.search-box i{
+    position: absolute;
+    color: #06283D;
+    font-size: 28px;
+}
+
+.weather-box {
+    text-align: center;
+}
+
+.weather-box img {
+    width: 60%;
+    margin-top: 30px;
+}
+
+/* Foi definido .x .y porque y está dentro de x*/
+.weather-box .temp {
+    position: relative;
+    color: #06283D;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-left: -16px;
+}
+
+.weather-box .temperature span{
+    position: absolute;
+    margin-left: 4px;
+    font-size: 1.5rem;
+}
+
+
+.weather-box .description{
+    color: #06283D;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;  
+}
+
+.weather-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.weather-details .humidity .weather-details .wind {
+     display: flex;
+     align-items: center;
+     width: 50%;
+     height: 100px;
+}
+
+.weather-details .humidity{
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+
+.weather-details .wind{
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+
+.weather-details i{
+    color: #06283D;
+    font-size: 26px;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+.weather-details span{
+    color: #06283D;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.weather-details p{
+    color: #06283D;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.not-found {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    scale: 0;
+    opacity: 0;
+    display: none;
+}
+
+.not-found img{
+    width: 70%;
+}
+
+.not-found p{
+    color: #06283D;
+    font-size: 22px;
+    font-weight:12px;
+}
+
+.weather-box, .weather-details{
+    scale: 0;
+    opacity: 0;
+}
+
+.fade-in{
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0.5s;
+}
+
+
+/*
+ * O @keyframes CSS na regra controla as etapas intermediárias em uma
+ * sequência de animação CSS definindo estilos para quadros-chave (ou waypoints)
+ * ao longo da sequência de animação. Isso dá mais controle sobre as etapas
+ * intermediárias da sequência de animação do que as transições.
+ */
+
+ /* more info: https://developer.mozilla.org/pt-BR/docs/Web/CSS/@keyframes*/
+@keyframes fadeIn{
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
