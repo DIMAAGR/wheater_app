@@ -92,7 +92,7 @@ body {
 }
 
 /* Foi definido .x .y porque y está dentro de x*/
-.weather-box .temp {
+.weather-box .temperature {
     position: relative;
     color: #06283D;
     font-size: 4rem;
@@ -182,7 +182,7 @@ body {
     opacity: 0;
 }
 
-.fade-in{
+.fadeIn{
     animation: 0.5s fadeIn forwards;
     animation-delay: 0.5s;
 }
